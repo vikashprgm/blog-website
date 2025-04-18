@@ -1,9 +1,11 @@
 import { Render } from "../components/Render"
 export function Home (){
-    const arr=["abc","def","ghi"];
+    const arr=["maths","fests","crazy_nashe"];
     return (
-        <div>
-            <Render heading="Hi" subcontent="this is sub" tags={arr}></Render>
+        <div className="flex flex-col justify-center">
+            <Render heading="This Prof. is crazy" subcontent="description is busy giving re-exams, check later :)" tags={arr}></Render>
+            <Render heading="What the f*ck even happened" subcontent="next time i'll know how to not do fests" tags={arr}></Render>
+            
             {/* 
             for i in range :
                 print :{

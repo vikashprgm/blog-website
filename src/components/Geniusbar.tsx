@@ -4,13 +4,13 @@ export function Geniusbar(){
     const navigate=useNavigate();
     return (
         <div className="flex justify-center">
-            <Button label="About" onclick={()=>{
+            <Button label="about" onclick={()=>{
                 navigate("/about")
             }}></Button>
-            <Button label="Home" onclick={()=>{
+            <Button label="home" onclick={()=>{
                 navigate("/")
             }}></Button>
-            <Button label="Photos" onclick={()=>{
+            <Button label="photos" onclick={()=>{
                 navigate("/photos")
             }}></Button>
         </div>
