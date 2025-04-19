@@ -1,6 +1,7 @@
 import { Render } from "../components/Render"
 export function Home (){
     const arr=["maths","fests","crazy_nashe"];
+    /// prop : string , string , string [] ;
     return (
         <div className="flex flex-col justify-center">
             <Render heading="This Prof. is crazy" subcontent="description is busy giving re-exams, check later :)" tags={arr}></Render>
