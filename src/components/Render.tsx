@@ -1,7 +1,7 @@
 type prop = {
     heading : string,
     subcontent : string,
-    tags : string[],
+    tags : string[]
 }
 export function Render ({heading,subcontent,tags}:prop){
     return (
@@ -10,7 +10,7 @@ export function Render ({heading,subcontent,tags}:prop){
             <div className="flex justify-center font-mono text-md">{subcontent}</div>
             <div className="flex justify-center">
                 <div className="flex justify-center m-1 p-1 font-medium">Tags : </div>
-                {tags.map(curr => <Tags tag={curr}/>)}
+                {tags.map((curr,index) => <Tags key={index} tag={curr}/>)}
             </div>
         </div>
     )

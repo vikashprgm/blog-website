@@ -1,8 +1,10 @@
-const express=require("express");
-const app=express();
+const express=require("express")
 const {Blog} = require("./schema")
+const cors = require("cors")
 const z = require("zod");
+const app=express();
 app.use(express.json());
+app.use(cors());
 
 const blogitems=z.object({
     title : z.string(),
@@ -16,7 +18,8 @@ app.get("/",async(req,res)=>{
         blog : blogs.map(blog=>({
             title : blog.title,
             heading : blog.subheading,
-            tags : blog.tags
+            tags : blog.tags,
+            id : blog._id
         }))
     })
 })
