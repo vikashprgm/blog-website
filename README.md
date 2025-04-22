@@ -12,7 +12,7 @@ and used unique id's as key in React
 
 # Stack
 
-## React
-## Typescript
-## Tailwind for styling
-## MongoDB
+### React
+### Typescript
+### Tailwind for styling
+### MongoDB
