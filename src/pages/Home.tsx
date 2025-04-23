@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Render } from "../components/Render"
 import axios from "axios";
+import { ViewBlog } from "../components/ViewBlog";
 
 type Blog={
     title : string,
-    heading : string,
+    description : string,
+    subtitle : string[],
+    content : string[],
     tags : string[],
     id : string
 }
@@ -27,7 +30,11 @@ export function Home (){
     return (
         <div className="flex flex-col justify-center">
             {blogs.map((blog) => (
-                <Render key={blog.id} heading={blog.heading} subcontent={blog.title} tags={blog.tags} /> ))}
+                <Render key={blog.id} title={blog.title} description={blog.description} tags={blog.tags} onclick={
+                    ()=>{
+                        <ViewBlog title={blog.title} content={blog.content} subtitle={blog.subtitle}></ViewBlog>
+                    }
+                }/> ))}
         </div>
     )
 }
