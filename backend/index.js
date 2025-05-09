@@ -9,8 +9,10 @@ app.use(cors());
 const blogitems=z.object({
     title : z.string(),
     description : z.string(),
-    subtitle : z.array(z.string()),
-    content : z.array(z.string()),
+    sections: z.array(z.object({
+        subtitle: z.string(),
+        content: z.string(),
+    })),
     tags: z.array(z.string()).optional()
 })
 
@@ -19,9 +21,8 @@ app.get("/",async(req,res)=>{
     res.json({
         blog : blogs.map(blog=>({
             title : blog.title,
+            sections : blog.sections,
             description : blog.description,
-            subtitle : blog.subtitle,
-            content : blog.content,
             tags : blog.tags,
             id : blog._id
         }))
@@ -39,10 +40,10 @@ app.post("/",async(req,res)=>{
     const blogdetails=await Blog.create({
         title : req.body.title,
         description : req.body.description,
-        content : req.body.content,
-        subtitle : req.body.subtitle,
+        sections : req.body.sections,
         tags : req.body.tags
     })    
+
     res.json({
         msg : "success"
     })

@@ -11,23 +11,26 @@ const blogSchema=new mongoose.Schema({
         maxLength : 30
     },
 
-    subtitle : {
-        type : [String],
-        required : true,
-        minLength : 1
-    },
-
     description : {
         type : String,
         required : true,
         minLength : 3
     },
 
-    content : {
-        type : [String],
-        required : true,
-        minLength : 1
-    },
+    sections: [
+        {
+          subtitle: {
+            type: String,
+            required: true,
+            minlength : 1
+         },
+          content: {
+            type: String,
+            required: true,
+            minlength : 1
+          },
+        },
+    ],
 
     tags : {
         type : [String],
